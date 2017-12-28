@@ -1,0 +1,13 @@
+{
+  "name": "mount-volume-docker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker build -t mount-volume-docker .",
+    "run": "docker run -d --name without-mount mount-volume-docker",
+    "run:mount": "cp -a app/src/* src && docker run -d --name with-mount -v $(pwd)/src:/usr/app/src -p 3000:3000 mount-volume-docker && echo 'happy Coading just edit src folder now created and see changes at localhost:3000 with out re-run image'"
+  },
+  "author": "",
+  "license": "ISC"
+}
